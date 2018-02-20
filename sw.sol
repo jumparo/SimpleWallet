@@ -3,11 +3,8 @@ pragma solidity ^0.4.0;
 import "github.com/ethereum/solidity/std/mortal.sol";
 
 contract SimpleWallet is mortal {
-    
    
     mapping (address => Permission) myAddressMapping;
-    
-    
     event someoneAddedSomeoneToTheSendersList(address thePersonWhoAdded,
     address thePersonWhoIsAllowedNow, uint thisMuchHeCanSend);
     
@@ -37,4 +34,8 @@ contract SimpleWallet is mortal {
             }
             }
         }
+        
+    }
+    function removeAddressFromSendersList(address theAddress){
+        delete permittedAddress[theAddress];
     }
